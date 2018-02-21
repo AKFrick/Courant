@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 RQS_1, intent, PendingIntent.FLAG_ONE_SHOT);
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP,
-                60_000, pendingIntent);
+                System.currentTimeMillis() + 60_000, pendingIntent);
 
         Toast.makeText(getApplicationContext(),
                 "Will run afeter " + 60_000, Toast.LENGTH_SHORT).show();
